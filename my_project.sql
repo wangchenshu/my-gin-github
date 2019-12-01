@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2019 年 11 月 24 日 20:04
+-- 產生時間： 2019 年 12 月 01 日 19:55
 -- 伺服器版本： 10.3.20-MariaDB-0ubuntu0.19.10.1
--- PHP 版本： 7.3.11-1+ubuntu19.10.1+deb.sury.org+6
+-- PHP 版本： 7.3.12-1+ubuntu19.10.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -138,9 +138,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'test1', '$2a$14$ivorwocztLi88O0ZWaSgzuNoKvVnVU1aT.m0MtIiz8a4/D99dC9Sq', '2019-11-23 19:03:48', '2019-11-23 19:03:48'),
-(2, 'test2', '$2a$14$UEnQc61UUZ/iadWkPPG5L.GYiL0GCzkqzchskH7wIr2OXCB4lwoD6', '2019-11-23 19:03:56', '2019-11-23 19:03:56'),
-(3, 'test33', '$2a$14$RjfHo/xCfzaijfxpzbzhKOILJPnWOTRAvXjIGadnGv9uDADS6MvTe', '2019-11-23 19:51:28', '2019-11-23 20:20:24');
+(1, 'test1', '$2a$14$Jrq5TzhoSBC1V/1GDFFkCemNS5wW7XqMOB6MpohI4HdDCTR0gw696', '2019-11-23 19:03:48', '2019-12-01 19:53:00'),
+(2, 'test2', '$2a$14$sxT82K3u9ynGCO6WWnqUdO6gCA5GnYYwgSfKq3mVX2.Oz9nA7NPuy', '2019-11-23 19:03:56', '2019-12-01 19:53:28'),
+(3, 'test3', '$2a$14$Pyfk.cMP9h8kiZtSTl595ekkLyXO2FcNAaGfsVB3ze0n6s0DAFqB.', '2019-11-23 19:51:28', '2019-12-01 19:53:43');
 
 --
 -- 已傾印資料表的索引
