@@ -14,20 +14,20 @@ func Engine() *gin.Engine {
 	r := gin.Default()
 
 	// Chatfuel
-	r.GET("/chatfuel/products", chatfuel.GetAll())
-	r.GET("/chatfuel/product/:id", chatfuel.Get())
-	r.GET("/chatfuel/cart/:messenger_user_id", chatfuel.GetCarts())
-	r.POST("/chatfuel/cart", chatfuel.AddCart())
-	r.POST("/chatfuel/cart/checkout", chatfuel.CheckoutCart())
+	r.GET("/api/chatfuel/products", chatfuel.GetAll())
+	r.GET("/api/chatfuel/product/:id", chatfuel.Get())
+	r.GET("/api/chatfuel/cart/:messenger_user_id", chatfuel.GetCarts())
+	r.POST("/api/chatfuel/cart", chatfuel.AddCart())
+	r.POST("/api/chatfuel/cart/checkout", chatfuel.CheckoutCart())
 
 	// chatfuel free version only support get and post @@
-	// r.DELETE("/chatfuel/cart", chatfuel.ClearCart())
-	r.POST("/chatfuel/cart/clear", chatfuel.ClearCart())
-	r.POST("/chatfuel/fb-user", chatfuel.FbUserCreate())
+	// r.DELETE("/api/chatfuel/cart", chatfuel.ClearCart())
+	r.POST("/api/chatfuel/cart/clear", chatfuel.ClearCart())
+	r.POST("/api/chatfuel/fb-user", chatfuel.FbUserCreate())
 
-	r.POST("/user/login", user.Login())
+	r.POST("/api/user/login", user.Login())
 
-	authorize := r.Group("/", jwtauth.JWTAuth())
+	authorize := r.Group("/api/", jwtauth.JWTAuth())
 	{
 		// User
 		authorize.POST("/user", user.Create())
