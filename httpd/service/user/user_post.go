@@ -94,7 +94,7 @@ func Login() gin.HandlerFunc {
 					return
 				}
 			} else {
-				c.JSON(http.StatusOK, gin.H{"token": nil})
+				c.JSON(http.StatusOK, nil)
 				return
 			}
 		}
