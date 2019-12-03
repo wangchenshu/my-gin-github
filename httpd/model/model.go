@@ -2,9 +2,9 @@ package model
 
 // Users - users struct
 type Users struct {
-	ID       int    `json:"id"`
-	Name     string `json:"name"`
-	Password string `json:"password"`
+	ID       int    `json:"id" gorm:"column:id"`
+	Name     string `json:"name" gorm:"type:varchar(50);unique"`
+	Password string `json:"password" gorm:"type:varchar(255)"`
 }
 
 // ProductType - product type struct
@@ -35,14 +35,14 @@ type Message struct {
 
 // FbUsers - fb users struct
 type FbUsers struct {
-	ID              int    `gorm:"column:id"`
-	MessengerUserID string `gorm:"varchar(100);unique"`
-	FirstName       string `gorm:"varchar(50)"`
-	LastName        string `gorm:"varchar(50)"`
-	Gender          string `gorm:"varchar(10)"`
-	ProfilePicURL   string `gorm:"text"`
-	Timezone        int    `gorm:"int(11)"`
-	Locale          string `gorm:"varchar(10)"`
+	ID              int    `json:"id" gorm:"column:id"`
+	MessengerUserID string `json:"messengerUserId" gorm:"varchar(100);unique"`
+	FirstName       string `json:"firstName" gorm:"varchar(50)"`
+	LastName        string `json:"lastName" gorm:"varchar(50)"`
+	Gender          string `json:"gender" gorm:"varchar(10)"`
+	ProfilePicURL   string `json:"profilePicUrl" gorm:"text"`
+	Timezone        int    `json:"timezone" gorm:"int(11)"`
+	Locale          string `json:"locale" gorm:"varchar(10)"`
 }
 
 // ChatfuelFbUser - chatfuel fb user
