@@ -9,18 +9,18 @@ type Users struct {
 
 // ProductType - product type struct
 type ProductType struct {
-	ProductTypeID int    `gorm:"column:id"`
-	Name          string `gorm:"type:varchar(255);unique"`
-	Description   string `gorm:"type:varchar(255)"`
+	ProductTypeID int    `json:"productTypeId" gorm:"column:id"`
+	Name          string `json:"name" gorm:"type:varchar(255);unique"`
+	Description   string `json:"description" gorm:"type:varchar(255)"`
 }
 
 // Products - products struct
 type Products struct {
-	ID            int    `gorm:"column:id"`
-	ProductTypeID int    `gorm:"association_foreignkey:ProductTypeID"`
-	Name          string `gorm:"type:varchar(255);unique"`
-	Price         int    `gorm:"type:int"`
-	Description   string `gorm:"type:varchar(255)"`
+	ID            int    `json:"id" gorm:"column:id"`
+	ProductTypeID int    `json:"productTypeId" gorm:"association_foreignkey:ProductTypeID"`
+	Name          string `json:"name" gorm:"type:varchar(255);unique"`
+	Price         int    `json:"price" gorm:"type:int"`
+	Description   string `json:"description" gorm:"type:varchar(255)"`
 }
 
 // Text - chatfuel text struct
@@ -58,13 +58,13 @@ type ChatfuelFbUser struct {
 
 // Carts - carts
 type Carts struct {
-	ID              int    `gorm:"column:id"`
-	MessengerUserID string `gorm:"varchar(100);unique"`
-	FirstName       string `gorm:"varchar(50);column:first_name"`
-	ProductID       int    `gorm:"int(11);column:product_id"`
-	ProductName     string `gorm:"varchar(50);column:product_name"`
-	Qty             int    `gorm:"int(11);column:qty"`
-	Price           int    `gorm:"int(11);column:price"`
+	ID              int    `json:"id" gorm:"column:id"`
+	MessengerUserID string `json:"messengerUserId" gorm:"varchar(100);unique"`
+	FirstName       string `json:"firstName" gorm:"varchar(50);column:first_name"`
+	ProductID       int    `json:"producId" gorm:"int(11);column:product_id"`
+	ProductName     string `json:"productName" gorm:"varchar(50);column:product_name"`
+	Qty             int    `json:"qty" gorm:"int(11);column:qty"`
+	Price           int    `json:"price" gorm:"int(11);column:price"`
 }
 
 // ChatfuelCarts - chatfuel cars
@@ -79,9 +79,9 @@ type ChatfuelCarts struct {
 
 // Orders - orders
 type Orders struct {
-	ID              int    `gorm:"column:id"`
-	MessengerUserID string `gorm:"varchar(100);unique"`
-	FirstName       string `gorm:"varchar(50);column:first_name"`
-	Detail          string `gorm:"text;column:detail"`
-	TotalPrice      int    `gorm:"int(11);column:total_price"`
+	ID              int    `json:"id" gorm:"column:id"`
+	MessengerUserID string `json:"messengerUserId" gorm:"varchar(100);unique"`
+	FirstName       string `json:"firstName" gorm:"varchar(50);column:first_name"`
+	Detail          string `json:"detail" gorm:"text;column:detail"`
+	TotalPrice      int    `json:"totalPrice" gorm:"int(11);column:total_price"`
 }

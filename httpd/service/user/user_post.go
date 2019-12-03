@@ -75,7 +75,7 @@ func Login() gin.HandlerFunc {
 					c.Abort()
 				}
 
-				c.String(http.StatusOK, token+"---------------<br>")
+				// c.String(http.StatusOK, token+"---------------<br>")
 				res, err := j.ParseToken(token)
 
 				if err != nil {
