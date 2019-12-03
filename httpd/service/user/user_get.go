@@ -39,7 +39,5 @@ func GetAll() gin.HandlerFunc {
 		db.Db.Find(&users)
 
 		c.JSON(http.StatusOK, users)
-
-		c.JSON(http.StatusOK, gin.H{"data": nil})
 	}
 }

@@ -2,9 +2,9 @@ package model
 
 // Users - users struct
 type Users struct {
-	ID       int
-	Name     string
-	Password string
+	ID       int    `json:"id"`
+	Name     string `json:"name"`
+	Password string `json:"password"`
 }
 
 // ProductType - product type struct
